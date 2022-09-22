@@ -102,32 +102,37 @@
                 android:id="@+id/green"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Green" />
+                android:text="Green"
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/magenta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Magenta" />
+                android:text="Magenta"
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Blue" />
+                android:text="Blue"
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/yellow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Yellow" />
+                android:text="Yellow"
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/rocket"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Rocket" />
+                android:text="Rocket"
+                android:textSize="12sp" />
         </RadioGroup>
 
         <CheckBox
@@ -156,16 +161,14 @@
 
         <SeekBar
             android:id="@+id/number"
-            style="@android:style/Widget.Material.SeekBar.Discrete"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:max="9"
-            android:min="1"
+            android:max="8"
             android:progress="1"
             app:layout_constraintEnd_toStartOf="@id/num_view"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/color"
-            tools:targetApi="o" />
+            app:layout_constraintTop_toBottomOf="@id/color" />
 
         <TextView
             android:id="@+id/num_view"

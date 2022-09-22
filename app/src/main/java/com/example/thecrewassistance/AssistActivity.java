@@ -39,8 +39,8 @@ public class AssistActivity extends AppCompatActivity implements RadioGroup.OnCh
             RelativeLayout player = new RelativeLayout(this);
 
             TextView tv = new TextView(this);
-            if (count != 3 && i != 2) tv.setText("" + 40 / count);
-            else tv.setText("" + (40 / count + 1));
+            if (count == 3 && i == 2) tv.setText("" + (40 / count + 1));
+            else tv.setText("" + 40 / count);
             tv.setId(1000 + i);
             tv.setTextSize(30);
 
@@ -75,7 +75,7 @@ public class AssistActivity extends AppCompatActivity implements RadioGroup.OnCh
                             ViewGroup.LayoutParams.WRAP_CONTENT);
                     params.alignWithParent = true;
                     params.leftMargin = 110 + j * 80;
-                    params.topMargin = 60 + k * 50;
+                    params.topMargin = 60 + k * 60;
 
                     cardMark.setClickable(false);
                     cardMark.setId(i * 100 + j * 10 + k);
@@ -140,10 +140,16 @@ public class AssistActivity extends AppCompatActivity implements RadioGroup.OnCh
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
         SeekBar number = findViewById(R.id.number);
+        CheckBox max = findViewById(R.id.max);
+        CheckBox min = findViewById(R.id.min);
+        CheckBox only = findViewById(R.id.only);
         if (i == R.id.rocket) {
-            number.setMax(4);
+            number.setMax(3);
+            max.setChecked(false);
+            min.setChecked(false);
+            only.setChecked(false);
         } else {
-            number.setMax(9);
+            number.setMax(8);
         }
         System.out.println(number.getMax());
     }
@@ -151,7 +157,7 @@ public class AssistActivity extends AppCompatActivity implements RadioGroup.OnCh
     @Override
     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
         TextView num_view = findViewById(R.id.num_view);
-        num_view.setText("" + i);
+        num_view.setText("" + (i + 1));
     }
 
     @Override
