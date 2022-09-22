@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tableLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_row="5"
+    android:layout_column="2"
+    tools:context=".AssistActivity" >
+
+    <ScrollView
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/manage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:id="@+id/view_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/manage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/player"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/radioButton10"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/radioButton10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1" />
+
+            <RadioButton
+                android:id="@+id/radioButton11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-2dp"
+                android:text="2" />
+
+            <RadioButton
+                android:id="@+id/radioButton12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-2dp"
+                android:text="3" />
+
+            <RadioButton
+                android:id="@+id/radioButton13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-2dp"
+                android:text="4" />
+
+            <RadioButton
+                android:id="@+id/radioButton14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-2dp"
+                android:text="5" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/green"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/add"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/player">
+
+            <RadioButton
+                android:id="@+id/green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Green" />
+
+            <RadioButton
+                android:id="@+id/magenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Magenta" />
+
+            <RadioButton
+                android:id="@+id/blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blue" />
+
+            <RadioButton
+                android:id="@+id/yellow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yellow" />
+
+            <RadioButton
+                android:id="@+id/rocket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rocket" />
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/min"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Min"
+            app:layout_constraintEnd_toStartOf="@id/max"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/max"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Max"
+            app:layout_constraintEnd_toStartOf="@id/only"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/only"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Only"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/number"
+            style="@android:style/Widget.Material.SeekBar.Discrete"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:max="9"
+            android:min="1"
+            android:progress="1"
+            app:layout_constraintEnd_toStartOf="@id/num_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/color"
+            tools:targetApi="o" />
+
+        <TextView
+            android:id="@+id/num_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:text="1"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/number"
+            app:layout_constraintEnd_toStartOf="@id/add"
+            app:layout_constraintTop_toTopOf="@id/number" />
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
