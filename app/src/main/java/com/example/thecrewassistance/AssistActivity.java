@@ -139,6 +139,9 @@ public class AssistActivity extends AppCompatActivity implements RadioGroup.OnCh
 
         CheckBox only = findViewById(R.id.only);
         only.setOnCheckedChangeListener(this);
+
+        CheckBox out = findViewById(R.id.out);
+        out.setOnCheckedChangeListener(this);
     }
 
     @Override
@@ -213,6 +216,17 @@ public class AssistActivity extends AppCompatActivity implements RadioGroup.OnCh
 
         int id = playerNumber * 100 + cardNumber * 10 + colorNumber;
         CheckBox card = findViewById(id);
+
+        CheckBox out = findViewById(R.id.out);
+        if (out.isChecked()) {
+            id = id - id % 100 + id % 10;
+            for (int i = id; i < id + 90; i += 10) {
+                CheckBox anotherPlayerCard = findViewById(i);
+                if (!anotherPlayerCard.isChecked()) anotherPlayerCard.setVisibility(View.INVISIBLE);
+            }
+            return;
+        }
+
         if (card.getVisibility() == View.INVISIBLE) {
             Toast deleted = Toast.makeText(this, "A player cannot have this card", Toast.LENGTH_LONG);
             deleted.show();
@@ -289,16 +303,25 @@ public class AssistActivity extends AppCompatActivity implements RadioGroup.OnCh
                 case R.id.max: {
                     ((CheckBox) findViewById(R.id.min)).setChecked(false);
                     ((CheckBox) findViewById(R.id.only)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.out)).setChecked(false);
                     break;
                 }
                 case R.id.min: {
                     ((CheckBox) findViewById(R.id.max)).setChecked(false);
                     ((CheckBox) findViewById(R.id.only)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.out)).setChecked(false);
                     break;
                 }
                 case R.id.only: {
                     ((CheckBox) findViewById(R.id.min)).setChecked(false);
                     ((CheckBox) findViewById(R.id.max)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.out)).setChecked(false);
+                    break;
+                }
+                case R.id.out: {
+                    ((CheckBox) findViewById(R.id.min)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.max)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.only)).setChecked(false);
                     break;
                 }
             }

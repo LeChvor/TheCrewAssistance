@@ -165,10 +165,17 @@
             android:layout_width="0dp"
             android:layout_height="24dp"
             android:text="Only"
-            app:layout_constraintEnd_toEndOf="@id/max"
             app:layout_constraintStart_toStartOf="@id/min"
             app:layout_constraintTop_toBottomOf="@id/min"
             android:textColor="@color/black" />
+
+        <CheckBox
+            android:id="@+id/out"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:text="Out"
+            app:layout_constraintStart_toEndOf="@id/only"
+            app:layout_constraintTop_toBottomOf="@id/min"/>
 
         <SeekBar
             android:id="@+id/number"
