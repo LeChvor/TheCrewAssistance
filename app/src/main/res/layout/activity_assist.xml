@@ -51,6 +51,7 @@
             android:checkedButton="@id/radioButton10"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/min"
             app:layout_constraintTop_toTopOf="parent">
 
             <RadioButton
@@ -63,28 +64,24 @@
                 android:id="@+id/radioButton11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-2dp"
                 android:text="2" />
 
             <RadioButton
                 android:id="@+id/radioButton12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-2dp"
                 android:text="3" />
 
             <RadioButton
                 android:id="@+id/radioButton13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-2dp"
                 android:text="4" />
 
             <RadioButton
                 android:id="@+id/radioButton14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-2dp"
                 android:text="5" />
         </RadioGroup>
 
@@ -138,7 +135,7 @@
         <CheckBox
             android:id="@+id/min"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="24dp"
             android:text="Min"
             app:layout_constraintEnd_toStartOf="@id/max"
             app:layout_constraintTop_toTopOf="parent" />
@@ -146,18 +143,19 @@
         <CheckBox
             android:id="@+id/max"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="24dp"
             android:text="Max"
-            app:layout_constraintEnd_toStartOf="@id/only"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
             android:id="@+id/only"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="24dp"
             android:text="Only"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="@id/max"
+            app:layout_constraintStart_toStartOf="@id/min"
+            app:layout_constraintTop_toBottomOf="@id/min" />
 
         <SeekBar
             android:id="@+id/number"
