@@ -1,6 +1,6 @@
 # TheCrewAssistance
 
-Простой помощник для настольной игры "The Crew: The Quest for Planet Nine", цель которого - помочь игрокам отслеживать сыгранные ранее карты и видеть, какие карты ещё могут быть у сокомандников.
+A simple assistant for the board game "The Crew: The Quest for Planet Nine", the purpose of which is to help players keep track of previously played cards and see what cards their teammates might still have.
 
 ## Installing
 Download the app-release.apk file from the app/release folder and install it.
