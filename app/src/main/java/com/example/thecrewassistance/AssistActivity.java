@@ -20,14 +20,18 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 public class AssistActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener, View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+
+    private int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_assist);
 
-        int count = getIntent().getIntExtra("count", 4);
+        count = getIntent().getIntExtra("count", 4);
 
         LinearLayout viewLayout = findViewById(R.id.view_layout);
         RadioGroup playersRadio = findViewById(R.id.player);
@@ -176,8 +180,15 @@ public class AssistActivity extends AppCompatActivity implements RadioGroup.OnCh
         RadioButton playerButton = findViewById(playerGroup.getCheckedRadioButtonId());
         int playerNumber = Integer.parseInt(playerButton.getText().toString()) - 1;
 
+        TextView cardCount = findViewById(playerNumber + 1000);
+        if (cardCount.getText().toString().equals("0")) {
+            Toast empty = Toast.makeText(this, "Player has no cards", Toast.LENGTH_LONG);
+            empty.show();
+            return;
+        }
+
         SeekBar number = findViewById(R.id.number);
-        int cardNumber = number.getProgress() - 1;
+        int cardNumber = number.getProgress();
 
         RadioGroup colorGroup = findViewById(R.id.color);
         int colorNumber = 0;
@@ -213,13 +224,13 @@ public class AssistActivity extends AppCompatActivity implements RadioGroup.OnCh
             TextView playerCounter = findViewById(1000 + playerNumber);
             playerCounter.setText("" + (Integer.parseInt(playerCounter.getText().toString()) - 1) );
 
-            for (int i = id + 100; i < 400; i += 100) {
+            for (int i = id + 100; i < count * 100; i += 100) {
                 //System.out.println(i);
                 CheckBox anotherPlayerCard = findViewById(i);
                 anotherPlayerCard.setVisibility(View.INVISIBLE);
             }
 
-            for (int i = id - 100; i > 0; i -= 100) {
+            for (int i = id - 100; i >= 0; i -= 100) {
                 //System.out.println(i);
                 CheckBox anotherPlayerCard = findViewById(i);
                 anotherPlayerCard.setVisibility(View.INVISIBLE);
