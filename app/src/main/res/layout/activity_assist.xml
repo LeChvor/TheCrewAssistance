@@ -58,31 +58,36 @@
                 android:id="@+id/radioButton10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1" />
+                android:text="1"
+                android:textColor="@color/black" />
 
             <RadioButton
                 android:id="@+id/radioButton11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2" />
+                android:text="2"
+                android:textColor="@color/black" />
 
             <RadioButton
                 android:id="@+id/radioButton12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3" />
+                android:text="3"
+                android:textColor="@color/black" />
 
             <RadioButton
                 android:id="@+id/radioButton13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4" />
+                android:text="4"
+                android:textColor="@color/black" />
 
             <RadioButton
                 android:id="@+id/radioButton14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="5" />
+                android:text="5"
+                android:textColor="@color/black" />
         </RadioGroup>
 
         <RadioGroup
@@ -100,28 +105,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Green"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:textColor="@color/black" />
 
             <RadioButton
                 android:id="@+id/magenta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Magenta"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:textColor="@color/black" />
 
             <RadioButton
                 android:id="@+id/blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Blue"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:textColor="@color/black" />
 
             <RadioButton
                 android:id="@+id/yellow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Yellow"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:textColor="@color/black" />
 
             <RadioButton
                 android:id="@+id/rocket"
@@ -129,7 +138,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Rocket"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:textColor="@color/black" />
         </RadioGroup>
 
         <CheckBox
@@ -138,7 +148,8 @@
             android:layout_height="24dp"
             android:text="Min"
             app:layout_constraintEnd_toStartOf="@id/max"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/black" />
 
         <CheckBox
             android:id="@+id/max"
@@ -146,7 +157,8 @@
             android:layout_height="24dp"
             android:text="Max"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/black" />
 
         <CheckBox
             android:id="@+id/only"
@@ -155,7 +167,8 @@
             android:text="Only"
             app:layout_constraintEnd_toEndOf="@id/max"
             app:layout_constraintStart_toStartOf="@id/min"
-            app:layout_constraintTop_toBottomOf="@id/min" />
+            app:layout_constraintTop_toBottomOf="@id/min"
+            android:textColor="@color/black" />
 
         <SeekBar
             android:id="@+id/number"
@@ -177,7 +190,8 @@
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="@id/number"
             app:layout_constraintEnd_toStartOf="@id/add"
-            app:layout_constraintTop_toTopOf="@id/number" />
+            app:layout_constraintTop_toTopOf="@id/number"
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/add"
