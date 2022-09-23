@@ -175,7 +175,8 @@
             android:layout_height="24dp"
             android:text="Out"
             app:layout_constraintStart_toEndOf="@id/only"
-            app:layout_constraintTop_toBottomOf="@id/min"/>
+            app:layout_constraintTop_toBottomOf="@id/min"
+            android:textColor="@color/black"/>
 
         <SeekBar
             android:id="@+id/number"
